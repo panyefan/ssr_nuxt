@@ -1,0 +1,31 @@
+{
+  "name": "nuxt_project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env APP_ENV=dev node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js",
+    "builddev": "cross-env APP_ENV=dev node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js build",
+    "pro": "cross-env APP_ENV=pro node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js",
+    "buildpro": "cross-env APP_ENV=pro node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js build",
+    "build": "cross-env APP_ENV=pro node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js build",
+    "start": "cross-env APP_ENV=pro node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js start",
+    "generate": "nuxt generate",
+    "jest": "jest"
+  },
+  "dependencies": {
+    "cookieparser": "^0.1.0",
+    "element-ui": "^2.13.2",
+    "js-cookie": "^2.2.1",
+    "nuxt": "^2.14.0",
+    "postcss-px2rem": "^0.3.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/axios": "^5.12.0",
+    "@vue/test-utils": "^1.0.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^26.1.0",
+    "cross-env": "^7.0.2",
+    "jest": "^26.1.0",
+    "vue-jest": "^3.0.4"
+  }
+}
