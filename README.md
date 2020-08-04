@@ -1,4 +1,4 @@
-# nuxt_project
+# Nuxt.js搭建的脚手架，使用ElementUI库、Vuex数据状态管理，支持服务端渲染，封装好的axios支持SSR请求和非SSR请求
 
 ## 相关命令
 
