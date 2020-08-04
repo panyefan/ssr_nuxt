@@ -64,8 +64,8 @@ plugins: [
 ```
 
 ## 将登录后拿到的token放到请求头里面
-```bash
+
 思路：登录接口获取到数据之后，将token保存到cookie中，而cookie是跟随每个请求的，所以在nuxtServerInit方法里将cookie里的数据赋值给store，然后在axios请求拦截器里，把store.state.token封装到请求头里。这样SSR请求和非SSR请求都可以携带有登录态的token了。
-```
+
 
 
