@@ -90,7 +90,7 @@ nuxtServerInit({ commit }, { req }) {
     commit('setToken', token);
 }
 ```
-![image](https://github.com/panyefan/ssr_nuxt/blob/master/static/demo01.jpg)
+![image](https://raw.githubusercontent.com/panyefan/ssr_nuxt/master/static/demo01.jpg)
 
 ## 服务端渲染
 ```bash
@@ -111,4 +111,4 @@ async asyncData ({ store, params, $axios }) {
     };
 },
 ```
-![image](https://github.com/panyefan/ssr_nuxt/blob/master/static/demo02.jpg)
+![image](https://raw.githubusercontent.com/panyefan/ssr_nuxt/master/static/demo02.jpg)
