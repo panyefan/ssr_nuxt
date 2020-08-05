@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        nuxt_project
-      </h1>
+      <h1 class="title">Nuxt服务端渲染</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -14,16 +12,9 @@
         >
           Documentation
         </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          {{ipcitydata}}
-        </a>
-        <el-button type="primary" @click="login()">登录</el-button>
+        <el-button type="primary" @click="login()">模拟登录</el-button>
       </div>
+      <div class="htmlstyle" v-html="imgTextContent"></div>
     </div>
   </div>
 </template>
@@ -34,16 +25,15 @@ import Cookies from "js-cookie";
 export default {
   data() {
     return {
-      ipcitydata: "1234",
-      res1: {},
-      res2: {},
+      imgTextContent: "",
+      dynamicData: {},
     }
   },
 
   // SSR
   async asyncData ({ store, params, $axios }) {
     let[res1,res2] = await Promise.all([
-        $axios.get('service-house/house/isDownOrCombination/6476929186249310211').then((res) => {
+        $axios.get('service-house/graphics/getHouseId/6476930177287847939').then((res) => {
           return res
         }),
         $axios.get('service-house/house/dynamic/listIndex/6476929186249310211').then((res) => {
@@ -52,9 +42,8 @@ export default {
     ]);
 
     return {
-      ipcitydata: res1.data.data,
-      res1: res1.data,
-      res2: res2.data,
+      imgTextContent: res1.data.data.content,
+      dynamicData: res2.data,
     };
   },
 
@@ -85,7 +74,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+/deep/.htmlstyle{
+  padding: 10px;
+  p{
+    font-size:30px;
+    margin: 30px 0;
+    line-height: 1.5;
+  }
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;

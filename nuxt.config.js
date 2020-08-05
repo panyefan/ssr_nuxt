@@ -18,14 +18,17 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Nuxt服务端渲染',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: "viewport", content: "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no"},
+      { hid: 'description', name: 'description', content: 'Nuxt服务端渲染，SSR' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: "/flexible.js", type: "text/javascript", charset: "utf-8" }
     ]
   },
   /*
@@ -77,7 +80,7 @@ export default {
     transpile: [/^element-ui/],
     postcss: [
       require("postcss-px2rem")({
-        remUnit: 75 //1rem == 75px;
+        remUnit: 75 // 1rem == 75px;比如设计图宽度是750px，值就设置为75
       })
     ],
     extractCSS: {
